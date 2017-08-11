@@ -7,13 +7,15 @@ public class Lab4_diego_alberto {
 
     static Scanner sc = new Scanner(System.in);
     static usuario u = new usuario();
-
-    static String[][] Temporal = new String[10][10];
+    static Caballero p = new Caballero();
+    static String[][] Temporal = Lectura();
     static char cambio = 's';
 
     public static void main(String[] args) {
+
         ArrayList<usuario> lista = new ArrayList();
         int menu = 0;
+        Temporal = Lectura();
         do {
             System.out.println("\n 1.Añadir jugadores \n 2.Eliminar jugadores \n 3.Lista Jugadores \n 4.Jugar \n 0. salir");
             menu = sc.nextInt();
@@ -70,6 +72,7 @@ public class Lab4_diego_alberto {
                     }
                     break;
                 case 4:
+                    
                     int player1,
                      player2;
                     String Jugador1,
@@ -81,6 +84,7 @@ public class Lab4_diego_alberto {
                         }
                         System.out.print(s);
                     }
+                    Imprimir (Temporal);
                     System.out.println("Escoja su nombre jugador 1");
                     player1 = sc.nextInt();
                     Jugador1 = lista.get(player1).getNombre();
@@ -91,11 +95,14 @@ public class Lab4_diego_alberto {
                     int x = sc.nextInt();
                     System.out.println("y:");
                     int y = sc.nextInt();
-                    System.out.println(Jugador2 + "Escoja la posicion x:");
+                    System.out.println(Jugador2 + "Escoja la posicion a mover x:");
                     int x1 = sc.nextInt();
                     System.out.println("y:");
                     int y1 = sc.nextInt();
-                    
+                    if ("c".equals(Temporal[x][y])  ) {
+                        Temporal=p.Movimiento(x, y, x1, y1, Temporal);
+                    }
+                    Imprimir(Temporal);
                     break;
 
             }
@@ -104,7 +111,7 @@ public class Lab4_diego_alberto {
     }
 
     public static String[][] Lectura() {
-
+        String[][] Temporal = new String[10][10];
         //parte de arriba
         Temporal[0][0] = "c";
         Temporal[0][2] = "f";
