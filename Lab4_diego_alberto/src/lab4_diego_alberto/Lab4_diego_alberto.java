@@ -8,11 +8,14 @@ public class Lab4_diego_alberto {
     static Scanner sc = new Scanner(System.in);
     static usuario u = new usuario();
 
+    static String[][] Temporal = new String[10][10];
+    static char cambio = 's';
+
     public static void main(String[] args) {
         ArrayList<usuario> lista = new ArrayList();
         int menu = 0;
         do {
-            System.out.println("1.Añadir jugadores \n 2.Eliminar jugadores \n 3.Lista Jugadores \n 4.Jugar \n 0. salir");
+            System.out.println("\n 1.Añadir jugadores \n 2.Eliminar jugadores \n 3.Lista Jugadores \n 4.Jugar \n 0. salir");
             menu = sc.nextInt();
             switch (menu) {
                 case 1:
@@ -49,24 +52,50 @@ public class Lab4_diego_alberto {
                         if (t instanceof usuario) {
                             s += "" + lista.indexOf(t) + "-" + t + "\n";
                         }
-                        System.out.println(s);
+                        System.out.print(s);
                     }
                     System.out.println("Escoga cual quiere eliminar");
-                    eliminar=sc.nextInt();
+                    eliminar = sc.nextInt();
                     lista.remove(eliminar);
                     break;
                 case 3:
                     System.out.println("Listado");
-                    
+
                     for (usuario t : lista) {
                         String s = "";
                         if (t instanceof usuario) {
                             s += "" + lista.indexOf(t) + "-" + t + "\n";
                         }
-                        System.out.println(s);
+                        System.out.print(s);
                     }
                     break;
                 case 4:
+                    int player1,
+                     player2;
+                    String Jugador1,
+                     Jugador2;
+                    for (usuario t : lista) {
+                        String s = "";
+                        if (t instanceof usuario) {
+                            s += "" + lista.indexOf(t) + "-" + t + "\n";
+                        }
+                        System.out.print(s);
+                    }
+                    System.out.println("Escoja su nombre jugador 1");
+                    player1 = sc.nextInt();
+                    Jugador1 = lista.get(player1).getNombre();
+                    System.out.println("Escoja su nombre jugador 2");
+                    player2 = sc.nextInt();
+                    Jugador2 = lista.get(player2).getNombre();
+                    System.out.println(Jugador1 + "Escoja la posicion x:");
+                    int x = sc.nextInt();
+                    System.out.println("y:");
+                    int y = sc.nextInt();
+                    System.out.println(Jugador2 + "Escoja la posicion x:");
+                    int x1 = sc.nextInt();
+                    System.out.println("y:");
+                    int y1 = sc.nextInt();
+                    
                     break;
 
             }
@@ -76,7 +105,6 @@ public class Lab4_diego_alberto {
 
     public static String[][] Lectura() {
 
-        String[][] Temporal = new String[10][10];
         //parte de arriba
         Temporal[0][0] = "c";
         Temporal[0][2] = "f";
@@ -134,5 +162,9 @@ public class Lab4_diego_alberto {
             }
             System.out.println("");
         }
+    }
+
+    public String[][] GetMatriz() {
+        return Temporal;
     }
 }
