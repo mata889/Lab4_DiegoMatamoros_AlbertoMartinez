@@ -7,6 +7,6 @@ public abstract class Piezas implements Movimiento {
     Color color;
 
     @Override
-    public abstract int Movimiento();
+    public abstract String[][] Movimiento();
 
 }
