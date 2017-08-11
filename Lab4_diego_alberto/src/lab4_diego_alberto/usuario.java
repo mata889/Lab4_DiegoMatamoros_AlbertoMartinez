@@ -69,7 +69,7 @@ public class usuario {
 
     @Override
     public String toString() {
-        return "usuario{" + "nombre=" + nombre + ", edad=" + edad + ", lugar=" + lugar + ", username=" + username + ", sexo=" + sexo + '}';
+        return "nombre: " + nombre + " / username: " + username;
     }
     
     

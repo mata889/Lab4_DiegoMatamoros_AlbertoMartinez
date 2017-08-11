@@ -28,6 +28,11 @@ public class Arquero extends Piezas{
     public void setY(int y) {
         this.y = y;
     }
+
+    @Override
+    public String toString() {
+        return "A";
+    }
     
     
 

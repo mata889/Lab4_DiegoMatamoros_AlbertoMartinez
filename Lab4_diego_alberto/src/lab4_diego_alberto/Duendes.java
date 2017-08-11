@@ -31,7 +31,9 @@ public class Duendes extends Piezas {
         this.y = y;
     }
     
-    
+    public String toString() {
+        return "D";
+    }
 
     @Override
     public int Movimiento() {

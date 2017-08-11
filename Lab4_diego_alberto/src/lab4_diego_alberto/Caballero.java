@@ -30,6 +30,13 @@ public class Caballero extends Piezas {
     }
 
     @Override
+    public String toString() {
+        return "C";
+    }
+    
+    
+
+    @Override
     public int Movimiento() {
         if (x<0 || y<0) {
 

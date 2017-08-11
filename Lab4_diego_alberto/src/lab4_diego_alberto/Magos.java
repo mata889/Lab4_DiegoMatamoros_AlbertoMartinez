@@ -29,7 +29,9 @@ public class Magos extends Piezas {
         this.y = y;
     }
     
-    
+    public String toString() {
+        return "M";
+    }
 
     @Override
     public int Movimiento() {
