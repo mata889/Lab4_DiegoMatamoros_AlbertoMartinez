@@ -29,17 +29,14 @@ public class Caballero extends Piezas {
         this.y = y;
     }
 
-    @Override
-<<<<<<< HEAD
+  
     public String toString() {
         return "C";
     }
     
     
 
-    @Override
-=======
->>>>>>> f61a7a7e7173d8c556cc1fe5f1e605026e2046e2
+    
     public int Movimiento() {
         
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
