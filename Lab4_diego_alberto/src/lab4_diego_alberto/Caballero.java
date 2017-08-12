@@ -37,11 +37,13 @@ public class Caballero extends Piezas {
 
         try {
 
-<<<<<<< HEAD
-            if (nuevapos1 == pos1 + 1 && nuevapos2 == pos2 || nuevapos1 == pos1 - 1 && nuevapos2 == pos2 || nuevapos1 == pos1 && nuevapos2 == pos2 + 1 || nuevapos1 == pos1 && nuevapos2 == pos2 - 1 && !"c☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"a☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"f☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"r☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"m☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"d☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"c☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"a☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"f☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"r☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"m☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"d☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"c☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"a☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"f☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"r☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"m☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"d☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"c☺".equals(Tablero[pos1 - 1][pos2 - 1]) || !"a☺".equals(Tablero[pos1 - 1][pos2 - 1]) || !"f☺".equals(Tablero[pos1 - 1][pos2 - 1]) || !"r☺".equals(Tablero[pos1 - 1][pos2 - 1]) || !"m☺".equals(Tablero[pos1 - 1][pos2 - 1]) || !"d☺".equals(Tablero[pos1 - 1][pos2 - 1])) {
+            if (!"c☻".equals(Tablero[pos1 + 1][pos2 + 1]) && !"a☻".equals(Tablero[pos1 + 1][pos2 + 1]) && !"f☻".equals(Tablero[pos1 + 1][pos2 + 1]) && !"r☻".equals(Tablero[pos1 + 1][pos2 + 1]) && !"m☻".equals(Tablero[pos1 + 1][pos2 + 1]) && !"d☻".equals(Tablero[pos1 + 1][pos2 + 1]) && !"c☺".equals(Tablero[pos1 + 1][pos2 + 1]) && !"a☺".equals(Tablero[pos1 + 1][pos2 + 1]) && !"f☺".equals(Tablero[pos1 + 1][pos2 + 1]) && !"r☺".equals(Tablero[pos1 + 1][pos2 + 1]) && !"m☺".equals(Tablero[pos1 + 1][pos2 + 1]) && !"d☺".equals(Tablero[pos1 + 1][pos2 + 1]) && !"c☻".equals(Tablero[pos1 - 1][pos2 - 1]) && !"a☻".equals(Tablero[pos1 - 1][pos2 - 1]) && !"f☻".equals(Tablero[pos1 - 1][pos2 - 1]) && !"r☻".equals(Tablero[pos1 - 1][pos2 - 1]) && !"m☻".equals(Tablero[pos1 - 1][pos2 - 1]) && !"d☻".equals(Tablero[pos1 - 1][pos2 - 1]) && !"c☺".equals(Tablero[pos1 - 1][pos2 - 1]) && !"a☺".equals(Tablero[pos1 - 1][pos2 - 1]) && !"f☺".equals(Tablero[pos1 - 1][pos2 - 1]) && !"r☺".equals(Tablero[pos1 - 1][pos2 - 1]) && !"m☺".equals(Tablero[pos1 - 1][pos2 - 1]) && !"d☺".equals(Tablero[pos1 - 1][pos2 - 1])
+                    && !"c☻".equals(Tablero[pos1 + 1][pos2]) && !"a☻".equals(Tablero[pos1 + 1][pos2]) && !"f☻".equals(Tablero[pos1 + 1][pos2]) && !"r☻".equals(Tablero[pos1 + 1][pos2]) && !"m☻".equals(Tablero[pos1 + 1][pos2]) && !"d☻".equals(Tablero[pos1 + 1][pos2]) && !"c☺".equals(Tablero[pos1 + 1][pos2]) && !"a☺".equals(Tablero[pos1 + 1][pos2]) && !"f☺".equals(Tablero[pos1 + 1][pos2]) && !"r☺".equals(Tablero[pos1 + 1][pos2]) && !"m☺".equals(Tablero[pos1 + 1][pos2]) && !"d☺".equals(Tablero[pos1 + 1][pos2])) {
+
+                return Tablero;
+            } else {
                 Tablero[nuevapos1][nuevapos2] = Tablero[pos1][pos2];
                 Tablero[pos1][pos2] = " ";
-                return Tablero;
             }
 
         } catch (Exception e) {
@@ -51,16 +53,6 @@ public class Caballero extends Piezas {
         }
 
     }
-=======
-
-    public String[][] Movimiento(int pos1,int pos2,int nuevapos1,int nuevapos2,String[][] Tablero) {
-        
-        Tablero[nuevapos1][nuevapos2]=Tablero[pos1][pos2];
-        Tablero[pos1][pos2]=" ";
-                 
-        return Tablero;
- }
->>>>>>> 3bf026ed40bf3522fbe94fc4c5d2958ffec7e1d9
 
     @Override
     public String[][] Movimiento() {
