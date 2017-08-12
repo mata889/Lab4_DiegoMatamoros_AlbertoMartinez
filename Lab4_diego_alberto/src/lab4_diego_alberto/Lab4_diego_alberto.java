@@ -142,7 +142,7 @@ public class Lab4_diego_alberto {
                     if ("d☺".equals(Temporal[x][y])  ) {
                         Temporal=d.Movimiento(x, y, x1, y1, Temporal);
                         resp=1;
-                    }else{
+                    }if (!"d☺".equals(Temporal[x][y])&&!"a☺".equals(Temporal[x][y])&&!"m☺".equals(Temporal[x][y])&&!"a☺".equals(Temporal[x][y])&&!"r☺".equals(Temporal[x][y])&&!"f☺".equals(Temporal[x][y])){
                         System.out.println("Esa no es pieza tuya o esta fuera del tablero! vuelve a intentarlo.");
                     }
                             }while(resp==2);
