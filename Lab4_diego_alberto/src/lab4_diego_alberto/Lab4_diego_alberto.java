@@ -7,7 +7,12 @@ public class Lab4_diego_alberto {
 
     static Scanner sc = new Scanner(System.in);
     static usuario u = new usuario();
-    static Caballero p = new Caballero();
+    static Caballero c = new Caballero();
+    static Arquero a = new Arquero();
+    static Duendes d = new Duendes();
+    static Dragon f = new Dragon();
+    static Rey r = new Rey();
+    static Magos m = new Magos();
     static String[][] Temporal = Lectura();
     static char cambio = 's';
 
@@ -52,13 +57,18 @@ public class Lab4_diego_alberto {
                     for (usuario t : lista) {
                         String s = "";
                         if (t instanceof usuario) {
-                            s += "" + lista.indexOf(t) + "-" + t + "\n";
+                            s += "" + (lista.indexOf(t)+1) + "-" + t + "\n";
                         }
                         System.out.print(s);
                     }
                     System.out.println("Escoga cual quiere eliminar");
-                    eliminar = sc.nextInt();
-                    lista.remove(eliminar);
+                    eliminar = sc.nextInt()-1;
+                    if (eliminar<0||eliminar>lista.size()){
+                    System.out.println("numero incorrecto");
+                    }else{
+                        lista.remove(eliminar);
+                        
+                    }
                     break;
                 case 3:
                     System.out.println("Listado");
@@ -66,58 +76,127 @@ public class Lab4_diego_alberto {
                     for (usuario t : lista) {
                         String s = "";
                         if (t instanceof usuario) {
-                            s += "" + lista.indexOf(t) + "-" + t + "\n";
+                            s += "" + (lista.indexOf(t)+1) + "-" + t + "\n";
                         }
                         System.out.print(s);
                     }
                     break;
                 case 4:
                     
-                    int player1,
-                     player2;
-                    String Jugador1,
-                     Jugador2;
+                    int player1, player2, cont=2, turnos;
+                    String Jugador1, Jugador2;
+                    Imprimir (Temporal);
                     for (usuario t : lista) {
                         String s = "";
                         if (t instanceof usuario) {
-                            s += "" + lista.indexOf(t) + "-" + t + "\n";
+                            s += "" + (lista.indexOf(t)+1) + "-" + t + "\n";
                         }
                         System.out.print(s);
                     }
-                    Imprimir (Temporal);
                     System.out.println("Escoja su nombre jugador 1");
-                    player1 = sc.nextInt();
+                    player1 = sc.nextInt()-1;
                     Jugador1 = lista.get(player1).getNombre();
                     System.out.println("Escoja su nombre jugador 2");
-                    player2 = sc.nextInt();
+                    player2 = sc.nextInt()-1;
                     Jugador2 = lista.get(player2).getNombre();
-                    System.out.println(Jugador1 + "Escoja la posicion x:");
+                    
+                    System.out.println("Cuantos turnos?");
+                    turnos=sc.nextInt();
+                    while (cont<=turnos+1){
+                    int resp;
+                        if (cont%2==0) {
+                            do{
+                                resp=2;
+                                Imprimir(Temporal);
+                                System.out.println("");
+                                System.out.println("Es el turno de " + Jugador1+"!");
+                                System.out.println("Escoja la posicion x:");
                     int x = sc.nextInt();
                     System.out.println("y:");
                     int y = sc.nextInt();
-                    System.out.println(Jugador2 + "Escoja la posicion a mover x:");
+                    System.out.println("Escoja la posicion a mover x:");
                     int x1 = sc.nextInt();
                     System.out.println("y:");
                     int y1 = sc.nextInt();
-                    if ("c☺".equals(Temporal[x][y])||"c☻".equals(Temporal[x][y])  ) {
-                        Temporal=p.Movimiento(x, y, x1, y1, Temporal);
+
+                    if ("c☺".equals(Temporal[x][y])  ) {
+                        Temporal=c.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
                     }
-                    if ("a☺".equals(Temporal[x][y])||"a☻".equals(Temporal[x][y])  ) {
-                        Temporal=p.Movimiento(x, y, x1, y1, Temporal);
+                    if ("a☺".equals(Temporal[x][y])  ) {
+                        Temporal=a.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
                     }
-                    if ("f☺".equals(Temporal[x][y])||"f☻".equals(Temporal[x][y])  ) {
-                        Temporal=p.Movimiento(x, y, x1, y1, Temporal);
+                    if ("f☺".equals(Temporal[x][y])  ) {
+                        Temporal=f.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
                     }
-                    if ("r☺".equals(Temporal[x][y])||"r☻".equals(Temporal[x][y])  ) {
-                        Temporal=p.Movimiento(x, y, x1, y1, Temporal);
+                    if ("r☺".equals(Temporal[x][y])  ) {
+                        Temporal=r.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
                     }
-                    if ("m☺".equals(Temporal[x][y])||"m☻".equals(Temporal[x][y])  ) {
-                        Temporal=p.Movimiento(x, y, x1, y1, Temporal);
+                    if ("m☺".equals(Temporal[x][y]) ) {
+                        Temporal=m.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
                     }
-                    if ("d☺".equals(Temporal[x][y])||"d☻".equals(Temporal[x][y])  ) {
-                        Temporal=p.Movimiento(x, y, x1, y1, Temporal);
+                    if ("d☺".equals(Temporal[x][y])  ) {
+                        Temporal=d.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
+                    }else{
+                        System.out.println("Esa no es pieza tuya o esta fuera del tablero! vuelve a intentarlo.");
                     }
-                    Imprimir(Temporal);
+                            }while(resp==2);
+                    
+                            
+                            
+                            cont++;
+                        }else{
+                            do{
+                            resp=2;
+                            Imprimir(Temporal);
+                            System.out.println("");
+                            System.out.println("Es el turno de " + Jugador2+"!");
+                                                System.out.println("Escoja la posicion x:");
+                    int x = sc.nextInt();
+                    System.out.println("y:");
+                    int y = sc.nextInt();
+                    System.out.println("Escoja la posicion a mover x:");
+                    int x1 = sc.nextInt();
+                    System.out.println("y:");
+                    int y1 = sc.nextInt();
+                    if ("c☻".equals(Temporal[x][y])  ) {
+                        Temporal=c.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
+                    }
+                    if ("a☻".equals(Temporal[x][y])  ) {
+                        Temporal=a.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
+                    }
+                    if ("f☻".equals(Temporal[x][y])  ) {
+                        Temporal=f.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
+                    }
+                    if ("r☻".equals(Temporal[x][y])  ) {
+                        Temporal=r.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
+                    }
+                    if ("m☻".equals(Temporal[x][y])  ) {
+                        Temporal=m.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
+                    }
+                    if ("d☻".equals(Temporal[x][y])  ) {
+                        Temporal=d.Movimiento(x, y, x1, y1, Temporal);
+                        resp=1;
+                    }else{
+                        System.out.println("Esa no es pieza tuya! vuelve a intentarlo.");
+                    }
+                            }while(resp==2);
+                            
+                            
+                            cont++;
+                        }
+                    }
+                    
                     break;
 
             }
