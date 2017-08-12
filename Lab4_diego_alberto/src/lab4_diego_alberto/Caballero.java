@@ -29,24 +29,27 @@ public class Caballero extends Piezas {
         this.y = y;
     }
 
-
     public String toString() {
         return "C";
     }
-    
-    
 
+    public String[][] Movimiento(int pos1, int pos2, int nuevapos1, int nuevapos2, String[][] Tablero) {
 
-<<<<<<< HEAD
-=======
+        try {
 
->>>>>>> a353bab9c79c6c5e0692a5051b00c125824b8af7
-    public String[][] Movimiento(int pos1,int pos2,int nuevapos1,int nuevapos2,String[][] Tablero) {
-        Tablero[nuevapos1][nuevapos2]=Tablero[pos1][pos2];
-        Tablero[pos1][pos2]=" ";
-                 
-        return Tablero;
- }
+            if (nuevapos1 == pos1 + 1 && nuevapos2 == pos2 || nuevapos1 == pos1 - 1 && nuevapos2 == pos2 || nuevapos1 == pos1 && nuevapos2 == pos2 + 1 || nuevapos1 == pos1 && nuevapos2 == pos2 - 1 && !"c☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"a☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"f☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"r☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"m☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"d☻".equals(Tablero[pos1 + 1][pos2 + 1]) || !"c☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"a☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"f☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"r☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"m☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"d☺".equals(Tablero[pos1 + 1][pos2 + 1]) || !"c☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"a☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"f☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"r☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"m☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"d☻".equals(Tablero[pos1 - 1][pos2 - 1]) || !"c☺".equals(Tablero[pos1 - 1][pos2 - 1]) || !"a☺".equals(Tablero[pos1 - 1][pos2 - 1]) || !"f☺".equals(Tablero[pos1 - 1][pos2 - 1]) || !"r☺".equals(Tablero[pos1 - 1][pos2 - 1]) || !"m☺".equals(Tablero[pos1 - 1][pos2 - 1]) || !"d☺".equals(Tablero[pos1 - 1][pos2 - 1])) {
+                Tablero[nuevapos1][nuevapos2] = Tablero[pos1][pos2];
+                Tablero[pos1][pos2] = " ";
+                return Tablero;
+            }
+
+        } catch (Exception e) {
+            return Tablero;
+        } finally {
+            return Tablero;
+        }
+
+    }
 
     @Override
     public String[][] Movimiento() {
